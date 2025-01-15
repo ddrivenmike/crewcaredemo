@@ -47,7 +47,14 @@
     <div class="max-w-2xl mx-auto mb-12">
         <div class="text-center" id="aiSection">
             <div class="space-y-4" id="preChat">
-                <div class="w-24 h-24 mx-auto bg-gradient-to-b from-cyan-300 to-cyan-500 rounded-full"></div>
+                <div class="w-48 h-48 mx-auto relative">
+                    <img 
+                        src="/api/placeholder/192/192"
+                        alt="AI Assistant"
+                        class="w-full h-full object-contain"
+                    />
+                    <div class="absolute inset-0 bg-black bg-opacity-10 rounded-full"></div>
+                </div>
                 <button onclick="startChat()" class="inline-flex items-center gap-2 bg-cyan-600 text-white px-8 py-3 rounded-full hover:bg-cyan-700 transition-colors transform hover:scale-105 duration-200 shadow-lg">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
