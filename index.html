@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrewCare Benefits</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .accordion-content {
+            display: none;
+        }
+        .accordion-content.active {
+            display: block;
+        }
+        .chevron-up {
+            display: none;
+        }
+        .accordion-button.active .chevron-up {
+            display: inline-block;
+        }
+        .accordion-button.active .chevron-down {
+            display: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-black p-4 md:p-6">
+    <!-- Logo Section -->
+    <div class="max-w-2xl mx-auto mb-8 text-center">
+        <img 
+            src="http://crewcare.io/wp-content/uploads/2025/01/CoBranded-Logo.png"
+            alt="CrewCare and McDonald's Logo"
+            class="h-20 mx-auto mb-8"
+        />
+    </div>
+
+    <!-- Welcome Section -->
+    <div class="max-w-2xl mx-auto mb-8 text-center">
+        <h1 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            Welcome, <span id="employeeName">Maria</span>
+        </h1>
+        <p class="text-gray-400 max-w-lg mx-auto">
+            As a valued team member at <span id="storeName">McDonald's #12345</span>, you have access to exclusive CrewCare benefits.
+        </p>
+    </div>
+
+    <!-- AI Agent Section -->
+    <div class="max-w-2xl mx-auto mb-12">
+        <div class="text-center" id="aiSection">
+            <div class="space-y-4" id="preChat">
+                <div class="w-24 h-24 mx-auto bg-gradient-to-b from-cyan-300 to-cyan-500 rounded-full"></div>
+                <button onclick="startChat()" class="inline-flex items-center gap-2 bg-cyan-600 text-white px-8 py-3 rounded-full hover:bg-cyan-700 transition-colors transform hover:scale-105 duration-200 shadow-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+                    </svg>
+                    Click to Start Your Benefits Tour
+                </button>
+                <p class="text-gray-500 text-sm">Your personal AI guide is ready to help</p>
+            </div>
+            <div id="activeChat" class="hidden bg-gray-900 rounded-xl p-6">
+                <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-b from-cyan-300 to-cyan-500 rounded-full"></div>
+                <h2 class="text-xl font-semibold text-white mb-2">CrewCare Assistant</h2>
+                <p class="text-gray-400 mb-4">Here to help with your benefits</p>
+                <div class="h-48 flex items-center justify-center border-2 border-gray-800 border-dashed rounded-xl">
+                    <p class="text-gray-500">AI Agent Interface Placeholder</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accordion Sections -->
+    <div class="max-w-2xl mx-auto space-y-4">
+        <!-- Benefits Overview Accordion -->
+        <div class="mb-4">
+            <button class="accordion-button w-full flex items-center justify-between bg-yellow-500 rounded-xl shadow p-4 hover:bg-yellow-400 transition-colors">
+                <span class="font-medium text-lg text-red-600">CrewCare Benefits Overview</span>
+                <svg class="chevron-down w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+                <svg class="chevron-up w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                </svg>
+            </button>
+            <div class="accordion-content bg-white p-4 rounded-xl shadow mt-2">
+                <div class="space-y-6 text-gray-700">
+                    <section class="mb-8">
+                        <p class="text-gray-700 text-lg">CrewCare is a comprehensive benefits package designed exclusively for McDonald's employees. Our program provides essential healthcare services, mental health support, lifestyle perks, financial tools, and transportation solutions - all aimed at improving your quality of life and well-being.</p>
+                    </section>
+
+                    <section>
+                        <h3 class="font-semibold text-lg text-red-600 mb-2">Healthcare Benefits</h3>
+                        <p class="mb-2">24/7 access to U.S. board-certified doctors for you and up to 8 family members:</p>
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>No consultation fees or copays</li>
+                            <li>Prescription services available</li>
+                            <li>Multilingual support in 60+ languages</li>
+                            <li>Save time and money by avoiding expensive ER visits</li>
+                            <li>Access to dental, vision, and healthcare discounts</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3 class="font-semibold text-lg text-red-600 mb-2">BetterMe Mental Health Support</h3>
+                        <p class="mb-2">Access to licensed mental health professionals through:</p>
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>Unlimited video calls and phone sessions</li>
+                            <li>24/7 text messaging support</li>
+                            <li>Family coverage included at no extra cost</li>
+                            <li>Professional support for stress, anxiety, and relationships</li>
+                            <li>Completely confidential and secure platform</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3 class="font-semibold text-lg text-red-600 mb-2">CrewCare Perks</h3>
+                        <p class="mb-2">Access to exclusive discounts and savings:</p>
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>Over 700,000 locations nationwide</li>
+                            <li>Save 10-50% at restaurants, movies, and stores</li>
+                            <li>Mobile app for easy access to deals</li>
+                            <li>Online shopping discounts</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3 class="font-semibold text-lg text-red-600 mb-2">Credit-Pal</h3>
+                        <p class="mb-2">Take control of your financial future:</p>
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>Understand and improve your credit score</li>
+                            <li>Access to personalized credit strategies</li>
+                            <li>Educational resources for financial literacy</li>
+                            <li>Tools for better credit management</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3 class="font-semibold text-lg text-red-600 mb-2">CrewCare Rideshare</h3>
+                        <p class="mb-2">Safe and affordable transportation with coworkers:</p>
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>Connect with fellow employees for rides</li>
+                            <li>Save money on commuting costs</li>
+                            <li>Flexible scheduling with live chat feature</li>
+                            <li>Available for both Android and iPhone</li>
+                        </ul>
+                    </section>
+
+                    <div class="bg-yellow-50 p-4 rounded-xl">
+                        <p class="text-gray-700 font-medium">Monthly Cost: $60</p>
+                        <p class="text-gray-600 text-sm">Convenient payroll deduction: $15 weekly or $30 biweekly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Activation Form Accordion -->
+        <div class="mb-4">
+            <button class="accordion-button w-full flex items-center justify-between bg-yellow-500 rounded-xl shadow p-4 hover:bg-yellow-400 transition-colors">
+                <span class="font-medium text-lg text-red-600">Activate Your Benefits</span>
+                <svg class="chevron-down w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+                <svg class="chevron-up w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                </svg>
+            </button>
+            <div class="accordion-content bg-white p-4 rounded-xl shadow mt-2">
+                <div class="space-y-4">
+                    <p class="text-gray-600">Complete the form below to activate your CrewCare benefits:</p>
+                    <div class="h-64 flex items-center justify-center border-2 border-gray-200 border-dashed rounded-xl">
+                        <p class="text-gray-500">Activation Form Placeholder</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize the page with employee data
+        function initializePage(employeeData) {
+            document.getElementById('employeeName').textContent = employeeData.name;
+            document.getElementById('storeName').textContent = employeeData.storeName;
+        }
+
+        // Handle chat interface
+        function startChat() {
+            document.getElementById('preChat').classList.add('hidden');
+            document.getElementById('activeChat').classList.remove('hidden');
+        }
+
+        // Handle accordions
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                button.classList.toggle('active');
+                content.classList.toggle('active');
+            });
+        });
+
+        // Example employee data - replace with actual data
+        const employeeData = {
+            name: 'Maria',
+            storeName: "McDonald's #12345"
+        };
+
+        // Initialize the page
+        initializePage(employeeData);
+    </script>
+</body>
+</html>
